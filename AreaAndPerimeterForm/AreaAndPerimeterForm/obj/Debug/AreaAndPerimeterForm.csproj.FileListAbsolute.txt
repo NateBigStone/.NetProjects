@@ -1,0 +1,9 @@
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\bin\Debug\AreaAndPerimeterForm.exe.config
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\bin\Debug\AreaAndPerimeterForm.exe
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\bin\Debug\AreaAndPerimeterForm.pdb
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\obj\Debug\AreaAndPerimeterForm.csprojResolveAssemblyReference.cache
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\obj\Debug\AreaAndPerimeterForm.AreaAndPerimeter.resources
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\obj\Debug\AreaAndPerimeterForm.Properties.Resources.resources
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\obj\Debug\AreaAndPerimeterForm.csproj.GenerateResource.Cache
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\obj\Debug\AreaAndPerimeterForm.exe
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\AreaAndPerimeterForm\AreaAndPerimeterForm\obj\Debug\AreaAndPerimeterForm.pdb
