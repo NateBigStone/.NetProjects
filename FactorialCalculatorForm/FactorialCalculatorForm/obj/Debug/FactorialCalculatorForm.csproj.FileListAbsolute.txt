@@ -1,0 +1,9 @@
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\bin\Debug\FactorialCalculatorForm.exe.config
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\bin\Debug\FactorialCalculatorForm.exe
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\bin\Debug\FactorialCalculatorForm.pdb
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\obj\Debug\FactorialCalculatorForm.csprojResolveAssemblyReference.cache
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\obj\Debug\FactorialCalculatorForm.Properties.Resources.resources
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\obj\Debug\FactorialCalculatorForm.csproj.GenerateResource.Cache
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\obj\Debug\FactorialCalculatorForm.exe
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\obj\Debug\FactorialCalculatorForm.pdb
+c:\users\big stone mgmt\documents\visual studio 2015\Projects\FactorialCalculatorForm\FactorialCalculatorForm\obj\Debug\FactorialCalculatorForm.factorialCalculator.resources
