@@ -1,0 +1,9 @@
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\bin\Debug\GeometryCalculator.exe.config
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\bin\Debug\GeometryCalculator.exe
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\bin\Debug\GeometryCalculator.pdb
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\obj\Debug\GeometryCalculator.csprojResolveAssemblyReference.cache
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\obj\Debug\GeometryCalculator.frmGeometryCalculator.resources
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\obj\Debug\GeometryCalculator.Properties.Resources.resources
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\obj\Debug\GeometryCalculator.csproj.GenerateResource.Cache
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\obj\Debug\GeometryCalculator.exe
+c:\users\panga\documents\visual studio 2015\Projects\GeometryCalculator\GeometryCalculator\obj\Debug\GeometryCalculator.pdb
