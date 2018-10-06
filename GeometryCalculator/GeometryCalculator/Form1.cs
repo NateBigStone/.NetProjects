@@ -23,125 +23,242 @@ namespace GeometryCalculator
             if (btnChange.Text == "Calculate")
             {
                 /*performing data validation; making sure each radio button is checked*/
-                if (rdoArea.Checked == false && rdoPerimeter.Checked == false && rdoAreaAndPerimeter.Checked == false)
+                if (IsChecked())
                 {
-                    MessageBox.Show(
-                        "Please check one of the radio buttons under \"Calculations\"", "Entry Error");
-                }
-                else
-                {
-
                     /*the following if statements create appropriate labels, and make the
                      * apporpriate text boxes visible depending on which radio button is checked*/
                     if (rdoRectangle.Checked == true)
                     {
                         lblInputOne.Text = "Length:"; //changes label to display appropriate information
                         lblInputTwo.Text = "Width:";
+                        txtOne.Visible = true; //makes textbox visible
+                        txtTwo.Visible = true;
                         txtThree.Text = "0"; //sets unused textboxes to zero for later processing
                         txtFour.Text = "0";
                         txtFive.Text = "0";
-                        txtOne.Visible = true; //makes textbox visible
-                        txtTwo.Visible = true;
                         btnChange.Text = "Answer"; //changes button display
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.rectangle; //changes picture
+                        txtOne.Focus(); //brings focus to first text box
                     }
                     else if (rdoSquare.Checked == true)
                     {
                         lblInputOne.Text = "Length:";
+                        txtOne.Visible = true;
                         txtTwo.Text = "0";
                         txtThree.Text = "0";
                         txtFour.Text = "0";
                         txtFive.Text = "0";
-                        txtOne.Visible = true;
                         btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.square;
+                        txtOne.Focus();
                     }
                     else if (rdoParallelogram.Checked == true)
                     {
-                        lblInputOne.Text = "Length:";
-                        lblInputTwo.Text = "Width:";
-                        lblInputThree.Text = "Height:";
-                        txtFour.Text = "0";
-                        txtFive.Text = "0";
-                        txtOne.Visible = true;
-                        txtTwo.Visible = true;
-                        txtThree.Visible = true;
-                        btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.parallelogram;
+                        if (rdoArea.Checked == true) //gives different text box options depending on which calculation type is checked
+                        {
+                            lblInputOne.Text = "Base:";
+                            lblInputTwo.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Text = "0";
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else if (rdoPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Length:";
+                            lblInputTwo.Text = "Width:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Text = "0";
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else if (rdoAreaAndPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Length (Base):";
+                            lblInputTwo.Text = "Width:";
+                            lblInputThree.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Visible = true;
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
                     }
                     else if (rdoRhombus.Checked == true)
                     {
-                        lblInputOne.Text = "Length:";
-                        lblInputTwo.Text = "Height:";
-                        txtThree.Text = "0";
-                        txtFour.Text = "0";
-                        txtFive.Text = "0";
-                        txtOne.Visible = true;
-                        txtTwo.Visible = true;
-                        btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.rhombus;
+                        if (rdoPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Length:";
+                            txtOne.Visible = true;
+                            txtTwo.Text = "0";
+                            txtThree.Text = "0";
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else
+                        {
+                            lblInputOne.Text = "Length:";
+                            lblInputTwo.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Text = "0";
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
                     }
                     else if (rdoTriangle.Checked == true)
                     {
-                        lblInputOne.Text = "Base:";
-                        lblInputTwo.Text = "Side 1:";
-                        lblInputThree.Text = "Side 2:";
-                        lblInputFour.Text = "Height:";
-                        txtFive.Text = "0";
-                        txtOne.Visible = true;
-                        txtTwo.Visible = true;
-                        txtThree.Visible = true;
-                        txtFour.Visible = true;
-                        btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.triangle;
+                        if (rdoArea.Checked == true)
+                        {
+                            lblInputOne.Text = "Base:";
+                            lblInputTwo.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Text = "0";
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else if (rdoPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Side A:";
+                            lblInputTwo.Text = "Side B:";
+                            lblInputThree.Text = "Side C:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Visible = true;
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else if (rdoAreaAndPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Base:";
+                            lblInputTwo.Text = "Side B:";
+                            lblInputThree.Text = "Side C:";
+                            lblInputFour.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Visible = true;
+                            txtFour.Visible = true;
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
                     }
                     else if (rdoTrapezoid.Checked == true)
                     {
-                        lblInputOne.Text = "Base:";
-                        lblInputTwo.Text = "Top:";
-                        lblInputThree.Text = "Side 1:";
-                        lblInputFour.Text = "Side 2:";
-                        lblInputFive.Text = "Height:";
-                        txtOne.Visible = true;
-                        txtTwo.Visible = true;
-                        txtThree.Visible = true;
-                        txtFour.Visible = true;
-                        txtFive.Visible = true;
-                        btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.trapezoid;
+                        if (rdoArea.Checked == true)
+                        {
+                            lblInputOne.Text = "Base:";
+                            lblInputTwo.Text = "Top:";
+                            lblInputThree.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Visible = true;
+                            txtFour.Text = "0";
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else if (rdoPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Side A:";
+                            lblInputTwo.Text = "Side B:";
+                            lblInputThree.Text = "Side C:";
+                            lblInputFour.Text = "Side D:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Visible = true;
+                            txtFour.Visible = true;
+                            txtFive.Text = "0";
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
+                        else if (rdoAreaAndPerimeter.Checked == true)
+                        {
+                            lblInputOne.Text = "Base:";
+                            lblInputTwo.Text = "Top:";
+                            lblInputThree.Text = "Side C:";
+                            lblInputFour.Text = "Side D:";
+                            lblInputFive.Text = "Height:";
+                            txtOne.Visible = true;
+                            txtTwo.Visible = true;
+                            txtThree.Visible = true;
+                            txtFour.Visible = true;
+                            txtFive.Visible = true;
+                            btnChange.Text = "Answer";
+                            txtOne.Focus();
+                        }
                     }
                     else if (rdoCircle.Checked == true)
                     {
                         lblInputOne.Text = "Radius:";
+                        txtOne.Visible = true;
                         txtTwo.Text = "0";
                         txtThree.Text = "0";
                         txtFour.Text = "0";
                         txtFive.Text = "0";
-                        txtOne.Visible = true;
                         btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.circle;
+                        txtOne.Focus();
                     }
                     else if (rdoHexagon.Checked == true)
                     {
                         lblInputOne.Text = "Length:";
+                        txtOne.Visible = true;
                         txtTwo.Text = "0";
                         txtThree.Text = "0";
                         txtFour.Text = "0";
                         txtFive.Text = "0";
-                        txtOne.Visible = true;
                         btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.hexagon;
+                        txtOne.Focus();
                     }
                     else if (rdoOctagon.Checked == true)
                     {
                         lblInputOne.Text = "Length:";
+                        txtOne.Visible = true;
                         txtTwo.Text = "0";
                         txtThree.Text = "0";
                         txtFour.Text = "0";
                         txtFive.Text = "0";
-                        txtOne.Visible = true;
                         btnChange.Text = "Answer";
-                        pctPicture.Image = GeometryCalculator.Properties.Resources.octagon;
+                        txtOne.Focus();
+                    }
+                    else if (rdoPercent.Checked == true)
+                    {
+                        lblInputOne.Text = "Dividend:";
+                        lblInputTwo.Text = "Divisor:";
+                        txtOne.Visible = true;
+                        txtTwo.Visible = true;
+                        txtThree.Text = "0";
+                        txtFour.Text = "0";
+                        txtFive.Text = "0";
+                        btnChange.Text = "Answer";
+                        txtOne.Focus();
+                    }
+                    else if (rdoRemainder.Checked == true)
+                    {
+                        lblInputOne.Text = "Dividend:";
+                        lblInputTwo.Text = "Divisor:";
+                        txtOne.Visible = true;
+                        txtTwo.Visible = true;
+                        txtThree.Text = "0";
+                        txtFour.Text = "0";
+                        txtFive.Text = "0";
+                        btnChange.Text = "Answer";
+                        txtOne.Focus();
                     }
                 }
             }
@@ -154,6 +271,7 @@ namespace GeometryCalculator
 
                     if (IsValid())
                     {
+                        /*initializing variables*/
                         decimal sideA = Convert.ToDecimal(txtOne.Text);
                         decimal sideB = Convert.ToDecimal(txtTwo.Text);
                         decimal sideC = Convert.ToDecimal(txtThree.Text);
@@ -174,23 +292,60 @@ namespace GeometryCalculator
                         }
                         else if (rdoParallelogram.Checked == true)
                         {
-                            area = sideA * sideC;
-                            perimeter = (sideA + sideB) * 2;
+                            if (rdoAreaAndPerimeter.Checked == true)
+                            {
+                                area = sideA * sideC;
+                                perimeter = (sideA + sideB) * 2;
+                            }
+                            else
+                            {
+                                area = sideA * sideB;
+                                perimeter = (sideA + sideB) * 2;
+                            }
                         }
                         else if (rdoRhombus.Checked == true)
                         {
-                            area = sideA * sideB;
-                            perimeter = sideA * 4;
+                            if (rdoPerimeter.Checked == true)
+                            {
+                                perimeter = sideA * 4;
+                            }
+                            else
+                            {
+                                area = sideA * sideB;
+                                perimeter = sideA * 4;
+                            }
                         }
                         else if (rdoTriangle.Checked == true)
                         {
-                            area = (sideA * sideD) / 2;
-                            perimeter = sideA + sideB + sideC;
+                            if (rdoArea.Checked == true)
+                            {
+                                area = (sideA * sideB) / 2;
+                            }
+                            else if (rdoPerimeter.Checked == true)
+                            {
+                                perimeter = sideA + sideB + sideC;
+                            }
+                            else if (rdoAreaAndPerimeter.Checked == true)
+                            {
+                                area = (sideA * sideD) / 2;
+                                perimeter = sideA + sideB + sideC;
+                            }
                         }
                         else if (rdoTrapezoid.Checked == true)
                         {
-                            area = ((sideA + sideB) / 2) * sideE; //sideA is base, sideB is top, sideE is height
-                            perimeter = sideA + sideB + sideC + sideD;
+                            if (rdoArea.Checked == true)
+                            {
+                                area = ((sideA + sideB) / 2) * sideC;
+                            }
+                            else if (rdoPerimeter.Checked == true)
+                            {
+                                perimeter = sideA + sideB + sideC + sideD;
+                            }
+                            else if (rdoAreaAndPerimeter.Checked == true)
+                            {
+                                area = ((sideA + sideB) / 2) * sideE;
+                                perimeter = sideA + sideB + sideC + sideD;
+                            }
                         }
                         else if (rdoCircle.Checked == true)
                         {
@@ -224,10 +379,26 @@ namespace GeometryCalculator
                             lblArea.Text = Convert.ToString("The area is " + $"{area:n2}");
                             lblPerimeter.Text = Convert.ToString("The perimeter is " + $"{perimeter:n2}");
                         }
+
+                        /*The folloing performs calculations and displays information depending on which tertiary radio button was checked*/
+                        if (rdoPercent.Checked == true)
+                        {
+                            decimal one = Convert.ToDecimal(txtOne.Text);
+                            decimal two = Convert.ToDecimal(txtTwo.Text);
+                            decimal answer = two / one;
+                            lblArea.Text = Convert.ToString("The percentage is: " + $"{answer:p1}");
+                        }
+                        else if (rdoRemainder.Checked == true)
+                        {
+                            decimal one = Convert.ToDecimal(txtOne.Text);
+                            decimal two = Convert.ToDecimal(txtTwo.Text);
+                            decimal answer = one % two;
+                            lblArea.Text = Convert.ToString("The remainder is: " + answer);
+                        }
                     }
                 }
 
-                /*Catching format errors*/
+                /*Catching overflow errors*/
                 catch (OverflowException)
                 {
                     MessageBox.Show(
@@ -246,10 +417,145 @@ namespace GeometryCalculator
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); //closes the form
         }
 
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            //Calls the IsChanged() function
+            IsChanged();
+            //Resets display picture
+            pctPicture.Image = GeometryCalculator.Properties.Resources.random;
+            //Resets the radio buttons
+            changeRadios();
+            rdoPercent.Checked = false;
+            rdoRemainder.Checked = false;
+        }
+
+        private void rdoChanged(object sender, EventArgs e)
+        {
+            if (rdoRectangle.Checked == true)
+            {
+                rdoPercent.Checked = false; //turns radio buttons off
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.rectangle; //changes picture
+            }
+            else if (rdoSquare.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.square;
+            }
+            else if (rdoParallelogram.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.parallelogram;
+            }
+            else if (rdoRhombus.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.rhombus;
+            }
+            else if (rdoTriangle.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.triangle;
+            }
+            else if (rdoTrapezoid.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.trapezoid;
+            }
+            else if (rdoCircle.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.circle;
+            }
+            else if (rdoHexagon.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.hexagon;
+            }
+            else if (rdoOctagon.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                pctPicture.Image = GeometryCalculator.Properties.Resources.octagon;
+            }
+            else if (rdoArea.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                if (rdoRectangle.Checked == false && rdoSquare.Checked == false && rdoParallelogram.Checked == false &&
+                rdoRhombus.Checked == false && rdoTriangle.Checked == false && rdoTrapezoid.Checked == false &&
+                rdoCircle.Checked == false && rdoHexagon.Checked == false && rdoOctagon.Checked == false)
+                {
+                    pctPicture.Image = GeometryCalculator.Properties.Resources.random;
+                }
+            }
+            else if (rdoPerimeter.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                if (rdoRectangle.Checked == false && rdoSquare.Checked == false && rdoParallelogram.Checked == false &&
+                rdoRhombus.Checked == false && rdoTriangle.Checked == false && rdoTrapezoid.Checked == false &&
+                rdoCircle.Checked == false && rdoHexagon.Checked == false && rdoOctagon.Checked == false)
+                {
+                    pctPicture.Image = GeometryCalculator.Properties.Resources.random;
+                }
+            }
+            else if (rdoAreaAndPerimeter.Checked == true)
+            {
+                rdoPercent.Checked = false;
+                rdoRemainder.Checked = false;
+                if (rdoRectangle.Checked == false && rdoSquare.Checked == false && rdoParallelogram.Checked == false &&
+                rdoRhombus.Checked == false && rdoTriangle.Checked == false && rdoTrapezoid.Checked == false &&
+                rdoCircle.Checked == false && rdoHexagon.Checked == false && rdoOctagon.Checked == false)
+                {
+                    pctPicture.Image = GeometryCalculator.Properties.Resources.random;
+                }
+            }
+            IsChanged();
+        }
+
+        private void rdoChangedTwo(object sender, EventArgs e)
+        {
+            if (rdoPercent.Checked == true)
+            {
+                changeRadios(); //calls function to clear radio buttons
+                pctPicture.Image = GeometryCalculator.Properties.Resources.percent;
+            }
+            else if (rdoRemainder.Checked == true)
+            {
+                changeRadios();
+                pctPicture.Image = GeometryCalculator.Properties.Resources.remainder;
+            }
+            IsChanged();
+        }
+
+        public void changeRadios()
+        {
+            rdoRectangle.Checked = false;
+            rdoSquare.Checked = false;
+            rdoParallelogram.Checked = false;
+            rdoRhombus.Checked = false;
+            rdoTriangle.Checked = false;
+            rdoTrapezoid.Checked = false;
+            rdoCircle.Checked = false;
+            rdoHexagon.Checked = false;
+            rdoOctagon.Checked = false;
+            rdoArea.Checked = false;
+            rdoPerimeter.Checked = false;
+            rdoAreaAndPerimeter.Checked = false;
+        }
+
+        public void IsChanged()
         {
             //Resets labels
             lblInputOne.Text = "";
@@ -273,13 +579,12 @@ namespace GeometryCalculator
             txtFive.Visible = false;
             //Resets button display
             btnChange.Text = "Calculate";
-            //Resets display picture
-            pctPicture.Image = GeometryCalculator.Properties.Resources.random;
         }
 
         public bool IsValid()
         {
             return
+                //The following calls data validation functions for each text box
                 IsPresent(txtOne, lblInputOne.Text) &&
                 IsDecimal(txtOne, lblInputOne.Text) &&
 
@@ -296,18 +601,18 @@ namespace GeometryCalculator
                 IsDecimal(txtFive, lblInputFive.Text);
         }
 
-        public bool IsPresent(TextBox box, string name)
+        public bool IsPresent(TextBox box, string name) //This function tests if data was added
         {
             if (box.Text == "")
             {
-                MessageBox.Show(name + " is a required field.", "Entry Error");
+                MessageBox.Show(name + " is a required field.", "Entry Error"); //Displays error message if not
                 box.Focus();
                 return false;
             }
             return true;
         }
 
-        public bool IsDecimal(TextBox box, string name)
+        public bool IsDecimal(TextBox box, string name) //This function tests if data added was a decimal
         {
             decimal number = 0m;
             if (Decimal.TryParse(box.Text, out number))
@@ -317,19 +622,42 @@ namespace GeometryCalculator
             else
             {
                 MessageBox.Show(
-                    name + " must be a decimal.",
+                    name + " must be an integer. No letters or special symbols allowed.",
                     "Entry Error");
                 box.Focus();
                 return false;
             }
         }
 
+        public bool IsChecked() //This function tests if corresponding radio buttons are checked
+        {
+            if (rdoPercent.Checked == true || rdoRemainder.Checked == true)
+            {
+                return true;
+            }
+            else if ((rdoArea.Checked == true || rdoPerimeter.Checked == true || rdoAreaAndPerimeter.Checked == true) &&
+            (rdoRectangle.Checked == true || rdoSquare.Checked == true || rdoParallelogram.Checked == true ||
+            rdoRhombus.Checked == true || rdoTriangle.Checked == true || rdoTrapezoid.Checked == true ||
+            rdoCircle.Checked == true || rdoHexagon.Checked == true || rdoOctagon.Checked == true))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Please check one of the radio buttons under \"Shape\" and \"Calculation\", or a radio button under \"Other Calculations\"", "Entry Error");
+                return false;
+            }
+        }
+
         private void btnOther_Click(object sender, EventArgs e)
         {
-            if (rdoPercent.Checked == true)
-            {
-                lblAnswer.Text = Convert.ToString(Convert.ToDecimal(txtInputOne.Text) * (Convert.ToDecimal(txtInputTwo.Text) / 100));
-            }
+
+        }
+
+        private void pctPicture_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

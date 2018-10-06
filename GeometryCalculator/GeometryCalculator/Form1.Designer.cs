@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeometryCalculator));
             this.bxShape = new System.Windows.Forms.GroupBox();
+            this.rdoOctagon = new System.Windows.Forms.RadioButton();
+            this.rdoHexagon = new System.Windows.Forms.RadioButton();
             this.rdoCircle = new System.Windows.Forms.RadioButton();
             this.rdoTrapezoid = new System.Windows.Forms.RadioButton();
             this.rdoTriangle = new System.Windows.Forms.RadioButton();
@@ -56,22 +58,14 @@
             this.txtFive = new System.Windows.Forms.TextBox();
             this.lblArea = new System.Windows.Forms.Label();
             this.lblPerimeter = new System.Windows.Forms.Label();
-            this.rdoHexagon = new System.Windows.Forms.RadioButton();
-            this.rdoOctagon = new System.Windows.Forms.RadioButton();
-            this.pctPicture = new System.Windows.Forms.PictureBox();
-            this.lblCalc1 = new System.Windows.Forms.Label();
-            this.txtInputOne = new System.Windows.Forms.TextBox();
-            this.txtInputTwo = new System.Windows.Forms.TextBox();
-            this.lblCalc2 = new System.Windows.Forms.Label();
             this.grpCalc = new System.Windows.Forms.GroupBox();
-            this.rdoPercent = new System.Windows.Forms.RadioButton();
             this.rdoRemainder = new System.Windows.Forms.RadioButton();
-            this.lblAnswer = new System.Windows.Forms.Label();
-            this.btnOther = new System.Windows.Forms.Button();
+            this.rdoPercent = new System.Windows.Forms.RadioButton();
+            this.pctPicture = new System.Windows.Forms.PictureBox();
             this.bxShape.SuspendLayout();
             this.bxCalculation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPicture)).BeginInit();
             this.grpCalc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // bxShape
@@ -95,6 +89,28 @@
             this.bxShape.TabStop = false;
             this.bxShape.Text = "Shape";
             // 
+            // rdoOctagon
+            // 
+            this.rdoOctagon.AutoSize = true;
+            this.rdoOctagon.Location = new System.Drawing.Point(22, 358);
+            this.rdoOctagon.Name = "rdoOctagon";
+            this.rdoOctagon.Size = new System.Drawing.Size(201, 30);
+            this.rdoOctagon.TabIndex = 9;
+            this.rdoOctagon.Text = "Regular Octagon";
+            this.rdoOctagon.UseVisualStyleBackColor = true;
+            this.rdoOctagon.CheckedChanged += new System.EventHandler(this.rdoChanged);
+            // 
+            // rdoHexagon
+            // 
+            this.rdoHexagon.AutoSize = true;
+            this.rdoHexagon.Location = new System.Drawing.Point(22, 321);
+            this.rdoHexagon.Name = "rdoHexagon";
+            this.rdoHexagon.Size = new System.Drawing.Size(206, 30);
+            this.rdoHexagon.TabIndex = 8;
+            this.rdoHexagon.Text = "Regular Hexagon";
+            this.rdoHexagon.UseVisualStyleBackColor = true;
+            this.rdoHexagon.CheckedChanged += new System.EventHandler(this.rdoChanged);
+            // 
             // rdoCircle
             // 
             this.rdoCircle.AutoSize = true;
@@ -105,6 +121,7 @@
             this.rdoCircle.TabIndex = 7;
             this.rdoCircle.Text = "Circle";
             this.rdoCircle.UseVisualStyleBackColor = true;
+            this.rdoCircle.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoTrapezoid
             // 
@@ -116,6 +133,7 @@
             this.rdoTrapezoid.TabIndex = 6;
             this.rdoTrapezoid.Text = "Trapezoid";
             this.rdoTrapezoid.UseVisualStyleBackColor = true;
+            this.rdoTrapezoid.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoTriangle
             // 
@@ -127,6 +145,7 @@
             this.rdoTriangle.TabIndex = 5;
             this.rdoTriangle.Text = "Triangle";
             this.rdoTriangle.UseVisualStyleBackColor = true;
+            this.rdoTriangle.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoRhombus
             // 
@@ -138,6 +157,7 @@
             this.rdoRhombus.TabIndex = 4;
             this.rdoRhombus.Text = "Rhombus";
             this.rdoRhombus.UseVisualStyleBackColor = true;
+            this.rdoRhombus.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoParallelogram
             // 
@@ -149,6 +169,7 @@
             this.rdoParallelogram.TabIndex = 3;
             this.rdoParallelogram.Text = "Parallelogram";
             this.rdoParallelogram.UseVisualStyleBackColor = true;
+            this.rdoParallelogram.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoSquare
             // 
@@ -160,6 +181,7 @@
             this.rdoSquare.TabIndex = 2;
             this.rdoSquare.Text = "Square";
             this.rdoSquare.UseVisualStyleBackColor = true;
+            this.rdoSquare.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoRectangle
             // 
@@ -171,6 +193,7 @@
             this.rdoRectangle.TabIndex = 1;
             this.rdoRectangle.Text = "Rectangle";
             this.rdoRectangle.UseVisualStyleBackColor = true;
+            this.rdoRectangle.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // bxCalculation
             // 
@@ -194,10 +217,10 @@
             this.rdoAreaAndPerimeter.Margin = new System.Windows.Forms.Padding(4);
             this.rdoAreaAndPerimeter.Name = "rdoAreaAndPerimeter";
             this.rdoAreaAndPerimeter.Size = new System.Drawing.Size(226, 30);
-            this.rdoAreaAndPerimeter.TabIndex = 10;
-            this.rdoAreaAndPerimeter.TabStop = true;
+            this.rdoAreaAndPerimeter.TabIndex = 12;
             this.rdoAreaAndPerimeter.Text = "Area and Perimeter";
             this.rdoAreaAndPerimeter.UseVisualStyleBackColor = true;
+            this.rdoAreaAndPerimeter.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoPerimeter
             // 
@@ -206,10 +229,10 @@
             this.rdoPerimeter.Margin = new System.Windows.Forms.Padding(4);
             this.rdoPerimeter.Name = "rdoPerimeter";
             this.rdoPerimeter.Size = new System.Drawing.Size(132, 30);
-            this.rdoPerimeter.TabIndex = 9;
-            this.rdoPerimeter.TabStop = true;
+            this.rdoPerimeter.TabIndex = 11;
             this.rdoPerimeter.Text = "Perimeter";
             this.rdoPerimeter.UseVisualStyleBackColor = true;
+            this.rdoPerimeter.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // rdoArea
             // 
@@ -218,19 +241,19 @@
             this.rdoArea.Margin = new System.Windows.Forms.Padding(4);
             this.rdoArea.Name = "rdoArea";
             this.rdoArea.Size = new System.Drawing.Size(83, 30);
-            this.rdoArea.TabIndex = 8;
-            this.rdoArea.TabStop = true;
+            this.rdoArea.TabIndex = 10;
             this.rdoArea.Text = "Area";
             this.rdoArea.UseVisualStyleBackColor = true;
+            this.rdoArea.CheckedChanged += new System.EventHandler(this.rdoChanged);
             // 
             // btnChange
             // 
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChange.Location = new System.Drawing.Point(298, 213);
+            this.btnChange.Location = new System.Drawing.Point(302, 337);
             this.btnChange.Margin = new System.Windows.Forms.Padding(4);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(111, 34);
-            this.btnChange.TabIndex = 11;
+            this.btnChange.TabIndex = 15;
             this.btnChange.Text = "Calculate";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
@@ -238,11 +261,11 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(417, 213);
+            this.btnClear.Location = new System.Drawing.Point(421, 337);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(111, 34);
-            this.btnClear.TabIndex = 12;
+            this.btnClear.TabIndex = 16;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -251,11 +274,11 @@
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(417, 255);
+            this.btnExit.Location = new System.Drawing.Point(421, 379);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(111, 34);
-            this.btnExit.TabIndex = 13;
+            this.btnExit.TabIndex = 17;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -265,52 +288,47 @@
             this.lblInputOne.AutoSize = true;
             this.lblInputOne.Location = new System.Drawing.Point(39, 448);
             this.lblInputOne.Name = "lblInputOne";
-            this.lblInputOne.Size = new System.Drawing.Size(81, 26);
+            this.lblInputOne.Size = new System.Drawing.Size(0, 26);
             this.lblInputOne.TabIndex = 5;
-            this.lblInputOne.Text = "LABEL";
             // 
             // lblInputTwo
             // 
             this.lblInputTwo.AutoSize = true;
             this.lblInputTwo.Location = new System.Drawing.Point(39, 487);
             this.lblInputTwo.Name = "lblInputTwo";
-            this.lblInputTwo.Size = new System.Drawing.Size(81, 26);
+            this.lblInputTwo.Size = new System.Drawing.Size(0, 26);
             this.lblInputTwo.TabIndex = 6;
-            this.lblInputTwo.Text = "LABEL";
             // 
             // lblInputThree
             // 
             this.lblInputThree.AutoSize = true;
             this.lblInputThree.Location = new System.Drawing.Point(39, 526);
             this.lblInputThree.Name = "lblInputThree";
-            this.lblInputThree.Size = new System.Drawing.Size(81, 26);
+            this.lblInputThree.Size = new System.Drawing.Size(0, 26);
             this.lblInputThree.TabIndex = 7;
-            this.lblInputThree.Text = "LABEL";
             // 
             // lblInputFour
             // 
             this.lblInputFour.AutoSize = true;
             this.lblInputFour.Location = new System.Drawing.Point(39, 565);
             this.lblInputFour.Name = "lblInputFour";
-            this.lblInputFour.Size = new System.Drawing.Size(81, 26);
+            this.lblInputFour.Size = new System.Drawing.Size(0, 26);
             this.lblInputFour.TabIndex = 8;
-            this.lblInputFour.Text = "LABEL";
             // 
             // lblInputFive
             // 
             this.lblInputFive.AutoSize = true;
             this.lblInputFive.Location = new System.Drawing.Point(39, 603);
             this.lblInputFive.Name = "lblInputFive";
-            this.lblInputFive.Size = new System.Drawing.Size(81, 26);
+            this.lblInputFive.Size = new System.Drawing.Size(0, 26);
             this.lblInputFive.TabIndex = 9;
-            this.lblInputFive.Text = "LABEL";
             // 
             // txtOne
             // 
             this.txtOne.Location = new System.Drawing.Point(150, 445);
             this.txtOne.Name = "txtOne";
             this.txtOne.Size = new System.Drawing.Size(100, 32);
-            this.txtOne.TabIndex = 14;
+            this.txtOne.TabIndex = 18;
             this.txtOne.Visible = false;
             // 
             // txtTwo
@@ -318,7 +336,7 @@
             this.txtTwo.Location = new System.Drawing.Point(150, 484);
             this.txtTwo.Name = "txtTwo";
             this.txtTwo.Size = new System.Drawing.Size(100, 32);
-            this.txtTwo.TabIndex = 15;
+            this.txtTwo.TabIndex = 19;
             this.txtTwo.Visible = false;
             // 
             // txtThree
@@ -326,7 +344,7 @@
             this.txtThree.Location = new System.Drawing.Point(150, 523);
             this.txtThree.Name = "txtThree";
             this.txtThree.Size = new System.Drawing.Size(100, 32);
-            this.txtThree.TabIndex = 16;
+            this.txtThree.TabIndex = 20;
             this.txtThree.Visible = false;
             // 
             // txtFour
@@ -334,7 +352,7 @@
             this.txtFour.Location = new System.Drawing.Point(150, 562);
             this.txtFour.Name = "txtFour";
             this.txtFour.Size = new System.Drawing.Size(100, 32);
-            this.txtFour.TabIndex = 17;
+            this.txtFour.TabIndex = 21;
             this.txtFour.Visible = false;
             // 
             // txtFive
@@ -342,7 +360,7 @@
             this.txtFive.Location = new System.Drawing.Point(150, 600);
             this.txtFive.Name = "txtFive";
             this.txtFive.Size = new System.Drawing.Size(100, 32);
-            this.txtFive.TabIndex = 18;
+            this.txtFive.TabIndex = 22;
             this.txtFive.Visible = false;
             // 
             // lblArea
@@ -351,9 +369,8 @@
             this.lblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArea.Location = new System.Drawing.Point(21, 651);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(259, 82);
+            this.lblArea.Size = new System.Drawing.Size(0, 82);
             this.lblArea.TabIndex = 15;
-            this.lblArea.Text = "LABEL";
             // 
             // lblPerimeter
             // 
@@ -361,94 +378,19 @@
             this.lblPerimeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPerimeter.Location = new System.Drawing.Point(20, 733);
             this.lblPerimeter.Name = "lblPerimeter";
-            this.lblPerimeter.Size = new System.Drawing.Size(259, 82);
+            this.lblPerimeter.Size = new System.Drawing.Size(0, 82);
             this.lblPerimeter.TabIndex = 16;
-            this.lblPerimeter.Text = "LABEL";
-            // 
-            // rdoHexagon
-            // 
-            this.rdoHexagon.AutoSize = true;
-            this.rdoHexagon.Location = new System.Drawing.Point(22, 321);
-            this.rdoHexagon.Name = "rdoHexagon";
-            this.rdoHexagon.Size = new System.Drawing.Size(206, 30);
-            this.rdoHexagon.TabIndex = 8;
-            this.rdoHexagon.Text = "Regular Hexagon";
-            this.rdoHexagon.UseVisualStyleBackColor = true;
-            // 
-            // rdoOctagon
-            // 
-            this.rdoOctagon.AutoSize = true;
-            this.rdoOctagon.Location = new System.Drawing.Point(22, 358);
-            this.rdoOctagon.Name = "rdoOctagon";
-            this.rdoOctagon.Size = new System.Drawing.Size(201, 30);
-            this.rdoOctagon.TabIndex = 9;
-            this.rdoOctagon.Text = "Regular Octagon";
-            this.rdoOctagon.UseVisualStyleBackColor = true;
-            // 
-            // pctPicture
-            // 
-            this.pctPicture.Image = global::GeometryCalculator.Properties.Resources.random;
-            this.pctPicture.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctPicture.InitialImage")));
-            this.pctPicture.Location = new System.Drawing.Point(297, 337);
-            this.pctPicture.Name = "pctPicture";
-            this.pctPicture.Size = new System.Drawing.Size(295, 245);
-            this.pctPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctPicture.TabIndex = 19;
-            this.pctPicture.TabStop = false;
-            // 
-            // lblCalc1
-            // 
-            this.lblCalc1.AutoSize = true;
-            this.lblCalc1.Location = new System.Drawing.Point(293, 868);
-            this.lblCalc1.Name = "lblCalc1";
-            this.lblCalc1.Size = new System.Drawing.Size(127, 26);
-            this.lblCalc1.TabIndex = 20;
-            this.lblCalc1.Text = "Calculate 1:";
-            // 
-            // txtInputOne
-            // 
-            this.txtInputOne.Location = new System.Drawing.Point(426, 862);
-            this.txtInputOne.Name = "txtInputOne";
-            this.txtInputOne.Size = new System.Drawing.Size(100, 32);
-            this.txtInputOne.TabIndex = 21;
-            // 
-            // txtInputTwo
-            // 
-            this.txtInputTwo.Location = new System.Drawing.Point(426, 900);
-            this.txtInputTwo.Name = "txtInputTwo";
-            this.txtInputTwo.Size = new System.Drawing.Size(100, 32);
-            this.txtInputTwo.TabIndex = 22;
-            // 
-            // lblCalc2
-            // 
-            this.lblCalc2.AutoSize = true;
-            this.lblCalc2.Location = new System.Drawing.Point(293, 903);
-            this.lblCalc2.Name = "lblCalc2";
-            this.lblCalc2.Size = new System.Drawing.Size(127, 26);
-            this.lblCalc2.TabIndex = 23;
-            this.lblCalc2.Text = "Calculate 2:";
             // 
             // grpCalc
             // 
             this.grpCalc.Controls.Add(this.rdoRemainder);
             this.grpCalc.Controls.Add(this.rdoPercent);
-            this.grpCalc.Location = new System.Drawing.Point(35, 835);
+            this.grpCalc.Location = new System.Drawing.Point(297, 214);
             this.grpCalc.Name = "grpCalc";
-            this.grpCalc.Size = new System.Drawing.Size(245, 129);
+            this.grpCalc.Size = new System.Drawing.Size(276, 116);
             this.grpCalc.TabIndex = 24;
             this.grpCalc.TabStop = false;
             this.grpCalc.Text = "Other Calculations";
-            // 
-            // rdoPercent
-            // 
-            this.rdoPercent.AutoSize = true;
-            this.rdoPercent.Location = new System.Drawing.Point(21, 31);
-            this.rdoPercent.Name = "rdoPercent";
-            this.rdoPercent.Size = new System.Drawing.Size(112, 30);
-            this.rdoPercent.TabIndex = 0;
-            this.rdoPercent.TabStop = true;
-            this.rdoPercent.Text = "Percent";
-            this.rdoPercent.UseVisualStyleBackColor = true;
             // 
             // rdoRemainder
             // 
@@ -456,29 +398,33 @@
             this.rdoRemainder.Location = new System.Drawing.Point(21, 68);
             this.rdoRemainder.Name = "rdoRemainder";
             this.rdoRemainder.Size = new System.Drawing.Size(144, 30);
-            this.rdoRemainder.TabIndex = 1;
-            this.rdoRemainder.TabStop = true;
+            this.rdoRemainder.TabIndex = 14;
             this.rdoRemainder.Text = "Remainder";
             this.rdoRemainder.UseVisualStyleBackColor = true;
+            this.rdoRemainder.CheckedChanged += new System.EventHandler(this.rdoChangedTwo);
             // 
-            // lblAnswer
+            // rdoPercent
             // 
-            this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Location = new System.Drawing.Point(44, 992);
-            this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(58, 26);
-            this.lblAnswer.TabIndex = 25;
-            this.lblAnswer.Text = "label";
+            this.rdoPercent.AutoSize = true;
+            this.rdoPercent.Location = new System.Drawing.Point(21, 31);
+            this.rdoPercent.Name = "rdoPercent";
+            this.rdoPercent.Size = new System.Drawing.Size(112, 30);
+            this.rdoPercent.TabIndex = 13;
+            this.rdoPercent.Text = "Percent";
+            this.rdoPercent.UseVisualStyleBackColor = true;
+            this.rdoPercent.CheckedChanged += new System.EventHandler(this.rdoChangedTwo);
             // 
-            // btnOther
+            // pctPicture
             // 
-            this.btnOther.Location = new System.Drawing.Point(486, 994);
-            this.btnOther.Name = "btnOther";
-            this.btnOther.Size = new System.Drawing.Size(119, 40);
-            this.btnOther.TabIndex = 26;
-            this.btnOther.Text = "Calculate";
-            this.btnOther.UseVisualStyleBackColor = true;
-            this.btnOther.Click += new System.EventHandler(this.btnOther_Click);
+            this.pctPicture.Image = global::GeometryCalculator.Properties.Resources.random;
+            this.pctPicture.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctPicture.InitialImage")));
+            this.pctPicture.Location = new System.Drawing.Point(297, 431);
+            this.pctPicture.Name = "pctPicture";
+            this.pctPicture.Size = new System.Drawing.Size(276, 216);
+            this.pctPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctPicture.TabIndex = 19;
+            this.pctPicture.TabStop = false;
+            this.pctPicture.Click += new System.EventHandler(this.pctPicture_Click);
             // 
             // frmGeometryCalculator
             // 
@@ -486,14 +432,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(663, 1087);
-            this.Controls.Add(this.btnOther);
-            this.Controls.Add(this.lblAnswer);
+            this.ClientSize = new System.Drawing.Size(610, 839);
             this.Controls.Add(this.grpCalc);
-            this.Controls.Add(this.lblCalc2);
-            this.Controls.Add(this.txtInputTwo);
-            this.Controls.Add(this.txtInputOne);
-            this.Controls.Add(this.lblCalc1);
             this.Controls.Add(this.pctPicture);
             this.Controls.Add(this.lblPerimeter);
             this.Controls.Add(this.lblArea);
@@ -520,9 +460,9 @@
             this.bxShape.PerformLayout();
             this.bxCalculation.ResumeLayout(false);
             this.bxCalculation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPicture)).EndInit();
             this.grpCalc.ResumeLayout(false);
             this.grpCalc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,15 +500,9 @@
         private System.Windows.Forms.PictureBox pctPicture;
         private System.Windows.Forms.RadioButton rdoOctagon;
         private System.Windows.Forms.RadioButton rdoHexagon;
-        private System.Windows.Forms.Label lblCalc1;
-        private System.Windows.Forms.TextBox txtInputOne;
-        private System.Windows.Forms.TextBox txtInputTwo;
-        private System.Windows.Forms.Label lblCalc2;
         private System.Windows.Forms.GroupBox grpCalc;
         private System.Windows.Forms.RadioButton rdoRemainder;
         private System.Windows.Forms.RadioButton rdoPercent;
-        private System.Windows.Forms.Label lblAnswer;
-        private System.Windows.Forms.Button btnOther;
     }
 }
 
