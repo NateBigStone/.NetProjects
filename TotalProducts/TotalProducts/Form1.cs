@@ -45,7 +45,7 @@ namespace TotalProducts
             {
                 { 
                     //For loops iterate over our 3 lists to extract the data. 
-                    for (var i = 0; i < product.Count - 1; i++)
+                    for (var i = 0; i < product.Count; i++)
                     {
                         //declaring the priceDecimal
                         decimal priceDecimal = Convert.ToDecimal(price[i]);
@@ -129,10 +129,13 @@ namespace TotalProducts
                 price.Add(PriceToAdd * QuantityToAdd);
                 quantity.Add(QuantityToAdd);
 
+                MessageBox.Show(ProductInput.Text + " has been added", "Product Added");
+
                 ProductInput.Text = "";
                 PriceInput.Text = "";
                 QuantityInput.Text = "";
-                
+
+
             }
 
         }
