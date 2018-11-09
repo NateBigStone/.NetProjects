@@ -40,8 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.rdoDVD = new System.Windows.Forms.RadioButton();
-            this.rdoBlu = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboFormat = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,28 +57,31 @@
             // 
             this.txtTitle.Location = new System.Drawing.Point(60, 12);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.Size = new System.Drawing.Size(130, 20);
             this.txtTitle.TabIndex = 1;
             // 
             // cboYear
             // 
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYear.FormattingEnabled = true;
             this.cboYear.Location = new System.Drawing.Point(60, 39);
             this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(76, 21);
+            this.cboYear.Size = new System.Drawing.Size(130, 21);
             this.cboYear.TabIndex = 2;
             // 
             // cboRating
             // 
+            this.cboRating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRating.FormattingEnabled = true;
             this.cboRating.Location = new System.Drawing.Point(60, 66);
             this.cboRating.Name = "cboRating";
-            this.cboRating.Size = new System.Drawing.Size(48, 21);
+            this.cboRating.Size = new System.Drawing.Size(130, 21);
             this.cboRating.TabIndex = 4;
             this.cboRating.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // cboGenre
             // 
+            this.cboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenre.FormattingEnabled = true;
             this.cboGenre.Location = new System.Drawing.Point(60, 93);
             this.cboGenre.Name = "cboGenre";
@@ -136,6 +139,7 @@
             this.btnOk.TabIndex = 11;
             this.btnOk.Text = "&OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -147,35 +151,33 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // rdoDVD
+            // label6
             // 
-            this.rdoDVD.AutoSize = true;
-            this.rdoDVD.Location = new System.Drawing.Point(60, 146);
-            this.rdoDVD.Name = "rdoDVD";
-            this.rdoDVD.Size = new System.Drawing.Size(48, 17);
-            this.rdoDVD.TabIndex = 13;
-            this.rdoDVD.TabStop = true;
-            this.rdoDVD.Text = "DVD";
-            this.rdoDVD.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 155);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Format:";
             // 
-            // rdoBlu
+            // cboFormat
             // 
-            this.rdoBlu.AutoSize = true;
-            this.rdoBlu.Location = new System.Drawing.Point(60, 170);
-            this.rdoBlu.Name = "rdoBlu";
-            this.rdoBlu.Size = new System.Drawing.Size(59, 17);
-            this.rdoBlu.TabIndex = 14;
-            this.rdoBlu.TabStop = true;
-            this.rdoBlu.Text = "BluRay";
-            this.rdoBlu.UseVisualStyleBackColor = true;
+            this.cboFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFormat.FormattingEnabled = true;
+            this.cboFormat.Location = new System.Drawing.Point(60, 152);
+            this.cboFormat.Name = "cboFormat";
+            this.cboFormat.Size = new System.Drawing.Size(121, 21);
+            this.cboFormat.TabIndex = 14;
             // 
             // movieEntry
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(202, 226);
-            this.Controls.Add(this.rdoBlu);
-            this.Controls.Add(this.rdoDVD);
+            this.Controls.Add(this.cboFormat);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label5);
@@ -210,7 +212,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.RadioButton rdoDVD;
-        private System.Windows.Forms.RadioButton rdoBlu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboFormat;
     }
 }

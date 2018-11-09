@@ -17,19 +17,19 @@ namespace LunchOrder
             InitializeComponent();
         }
 
-        double courseCost = 0.00;
+        double courseCost = 0.00;       //creates variables for cost
         double addonCost = 0.00;
         double addonValue = 0.00;
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e) //exit button
         {
             this.Close();
         }
 
-        private void btnOrder_Click(object sender, EventArgs e)
+        private void btnOrder_Click(object sender, EventArgs e) //order button calculates
         {
             checkChanged();
-            if (checkBox1.Checked)
+            if (checkBox1.Checked)              //adds addons
             {
                 addonCost += addonValue;
             }
@@ -41,7 +41,7 @@ namespace LunchOrder
             {
                 addonCost += addonValue;
             }
-            double subTotal = courseCost + addonCost;
+            double subTotal = courseCost + addonCost;  //calculates subtotal tax total
             double tax = subTotal * .0775;
             double total = subTotal + tax;
 
@@ -52,11 +52,11 @@ namespace LunchOrder
 
         public void checkChanged()
         {
-            courseCost = 0.00;
+            courseCost = 0.00;    //sets values back to zero
             addonCost = 0.00;
             addonValue = 0.00;
 
-            if (rdoHam.Checked == true)
+            if (rdoHam.Checked == true)      //check which course
             {
                 courseChecked("Hamburger");
             }
@@ -70,7 +70,7 @@ namespace LunchOrder
             }
         }
 
-        public void courseChecked(string courseFood)
+        public void courseChecked(string courseFood)   //changes groupbox
         {
             if (courseFood == "Hamburger")
             {
@@ -104,7 +104,7 @@ namespace LunchOrder
             }
         }
 
-        private void rdoHam_CheckedChanged(object sender, EventArgs e)
+        private void rdoHam_CheckedChanged(object sender, EventArgs e) //checks changed
         {
             checkChanged();
         }
