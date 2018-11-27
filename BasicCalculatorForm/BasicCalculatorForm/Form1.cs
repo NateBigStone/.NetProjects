@@ -19,6 +19,7 @@ namespace BasicCalculatorForm
 
         Calculator calculation;
         string currentView = "";
+        decimal stored = 0.0m;
         bool operatorSelected = false;
 
         private void numberAdder(string num)  //concats string of a number into view
@@ -134,6 +135,46 @@ namespace BasicCalculatorForm
             currentView += "/";
             txtCurrentValue.Text = currentView;
             operatorSelected = true;
+        }
+
+        private void btnMR_Click(object sender, EventArgs e)
+        {
+            if (stored > 0)
+            {
+                currentView = Convert.ToString(stored);
+                txtCurrentValue.Text = currentView;
+            }
+            
+        }
+
+        private void btnMS_Click(object sender, EventArgs e)
+        {
+            char possibleOperator = currentView[currentView.Length - 1];
+            if ( 
+                possibleOperator == '+' ||
+                possibleOperator == '-' ||
+                possibleOperator == '*' ||
+                possibleOperator == '/'
+                )
+            {
+                stored = Convert.ToDecimal(currentView.Remove(currentView.Length - 1, 1));
+            }
+            else
+            {
+                stored = Convert.ToDecimal(currentView);
+            }
+            txtMemory.Text = "M";
+        }
+
+        private void btnMC_Click(object sender, EventArgs e)
+        {
+            stored = 0.0m;
+            txtMemory.Text = "";
+        }
+
+        private void btnMPlus_Click(object sender, EventArgs e)
+        {
+            stored += Convert.ToDecimal(currentView);
         }
     }
 }
