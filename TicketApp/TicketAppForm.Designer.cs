@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnIssueTicket = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lstTimeSlots = new System.Windows.Forms.ListBox();
+            this.lstTickets = new System.Windows.Forms.ListBox();
             this.gbGuests = new System.Windows.Forms.GroupBox();
             this.lblGuestNumber = new System.Windows.Forms.Label();
             this.gbAvailability = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,8 @@
             this.lblOutstandingTickets = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tmrTimeslot = new System.Windows.Forms.Timer(this.components);
+            this.lblGuests = new System.Windows.Forms.Label();
             this.gbGuests.SuspendLayout();
             this.gbAvailability.SuspendLayout();
             this.SuspendLayout();
@@ -74,17 +77,18 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lstTimeSlots
+            // lstTickets
             // 
-            this.lstTimeSlots.FormattingEnabled = true;
-            this.lstTimeSlots.ItemHeight = 16;
-            this.lstTimeSlots.Location = new System.Drawing.Point(21, 273);
-            this.lstTimeSlots.Name = "lstTimeSlots";
-            this.lstTimeSlots.Size = new System.Drawing.Size(372, 196);
-            this.lstTimeSlots.TabIndex = 3;
+            this.lstTickets.FormattingEnabled = true;
+            this.lstTickets.ItemHeight = 16;
+            this.lstTickets.Location = new System.Drawing.Point(21, 273);
+            this.lstTickets.Name = "lstTickets";
+            this.lstTickets.Size = new System.Drawing.Size(372, 196);
+            this.lstTickets.TabIndex = 3;
             // 
             // gbGuests
             // 
+            this.gbGuests.Controls.Add(this.lblGuests);
             this.gbGuests.Controls.Add(this.lblGuestNumber);
             this.gbGuests.Location = new System.Drawing.Point(22, 12);
             this.gbGuests.Name = "gbGuests";
@@ -146,6 +150,20 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Total tickets outstanding: ";
             // 
+            // tmrTimeslot
+            // 
+            this.tmrTimeslot.Enabled = true;
+            this.tmrTimeslot.Interval = 1000;
+            this.tmrTimeslot.Tick += new System.EventHandler(this.tmrTimeslot_Tick);
+            // 
+            // lblGuests
+            // 
+            this.lblGuests.AutoSize = true;
+            this.lblGuests.Location = new System.Drawing.Point(43, 47);
+            this.lblGuests.Name = "lblGuests";
+            this.lblGuests.Size = new System.Drawing.Size(0, 17);
+            this.lblGuests.TabIndex = 2;
+            // 
             // TicketAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,7 +171,7 @@
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(405, 531);
             this.Controls.Add(this.gbGuests);
-            this.Controls.Add(this.lstTimeSlots);
+            this.Controls.Add(this.lstTickets);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.gbAvailability);
@@ -163,6 +181,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.TicketAppForm_Load);
             this.gbGuests.ResumeLayout(false);
+            this.gbGuests.PerformLayout();
             this.gbAvailability.ResumeLayout(false);
             this.gbAvailability.PerformLayout();
             this.ResumeLayout(false);
@@ -174,7 +193,7 @@
         private System.Windows.Forms.Button btnIssueTicket;
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.ListBox lstTimeSlots;
+        private System.Windows.Forms.ListBox lstTickets;
         private System.Windows.Forms.GroupBox gbGuests;
         private System.Windows.Forms.Label lblGuestNumber;
         private System.Windows.Forms.GroupBox gbAvailability;
@@ -182,6 +201,8 @@
         private System.Windows.Forms.Label lblOutstandingTickets;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tmrTimeslot;
+        private System.Windows.Forms.Label lblGuests;
     }
 }
 

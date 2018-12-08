@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.btnOk = new System.Windows.Forms.Button();
-            this.txtMinutes = new System.Windows.Forms.TextBox();
-            this.txtFirstTicketNumber = new System.Windows.Forms.TextBox();
-            this.txtEndTime = new System.Windows.Forms.TextBox();
-            this.txtStartTime = new System.Windows.Forms.TextBox();
-            this.txtGuests = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.nudGuestsPerWindow = new System.Windows.Forms.NumericUpDown();
+            this.nudMinutes = new System.Windows.Forms.NumericUpDown();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.nudFirstTicketNumber = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGuestsPerWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFirstTicketNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOk
@@ -50,41 +53,6 @@
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // txtMinutes
-            // 
-            this.txtMinutes.Location = new System.Drawing.Point(208, 51);
-            this.txtMinutes.Name = "txtMinutes";
-            this.txtMinutes.Size = new System.Drawing.Size(100, 22);
-            this.txtMinutes.TabIndex = 1;
-            // 
-            // txtFirstTicketNumber
-            // 
-            this.txtFirstTicketNumber.Location = new System.Drawing.Point(208, 217);
-            this.txtFirstTicketNumber.Name = "txtFirstTicketNumber";
-            this.txtFirstTicketNumber.Size = new System.Drawing.Size(100, 22);
-            this.txtFirstTicketNumber.TabIndex = 2;
-            // 
-            // txtEndTime
-            // 
-            this.txtEndTime.Location = new System.Drawing.Point(208, 176);
-            this.txtEndTime.Name = "txtEndTime";
-            this.txtEndTime.Size = new System.Drawing.Size(100, 22);
-            this.txtEndTime.TabIndex = 3;
-            // 
-            // txtStartTime
-            // 
-            this.txtStartTime.Location = new System.Drawing.Point(208, 132);
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(100, 22);
-            this.txtStartTime.TabIndex = 4;
-            // 
-            // txtGuests
-            // 
-            this.txtGuests.Location = new System.Drawing.Point(208, 91);
-            this.txtGuests.Name = "txtGuests";
-            this.txtGuests.Size = new System.Drawing.Size(100, 22);
-            this.txtGuests.TabIndex = 5;
             // 
             // label1
             // 
@@ -131,27 +99,100 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Guests per window: ";
             // 
+            // nudGuestsPerWindow
+            // 
+            this.nudGuestsPerWindow.Location = new System.Drawing.Point(208, 94);
+            this.nudGuestsPerWindow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudGuestsPerWindow.Name = "nudGuestsPerWindow";
+            this.nudGuestsPerWindow.Size = new System.Drawing.Size(112, 22);
+            this.nudGuestsPerWindow.TabIndex = 11;
+            this.nudGuestsPerWindow.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nudMinutes
+            // 
+            this.nudMinutes.Location = new System.Drawing.Point(208, 56);
+            this.nudMinutes.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMinutes.Name = "nudMinutes";
+            this.nudMinutes.Size = new System.Drawing.Size(112, 22);
+            this.nudMinutes.TabIndex = 12;
+            this.nudMinutes.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpStart.Location = new System.Drawing.Point(208, 137);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.ShowUpDown = true;
+            this.dtpStart.Size = new System.Drawing.Size(112, 22);
+            this.dtpStart.TabIndex = 13;
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEnd.Location = new System.Drawing.Point(208, 176);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.ShowUpDown = true;
+            this.dtpEnd.Size = new System.Drawing.Size(112, 22);
+            this.dtpEnd.TabIndex = 14;
+            // 
+            // nudFirstTicketNumber
+            // 
+            this.nudFirstTicketNumber.Location = new System.Drawing.Point(208, 222);
+            this.nudFirstTicketNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudFirstTicketNumber.Name = "nudFirstTicketNumber";
+            this.nudFirstTicketNumber.Size = new System.Drawing.Size(112, 22);
+            this.nudFirstTicketNumber.TabIndex = 15;
+            this.nudFirstTicketNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // TicketAppOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 405);
+            this.Controls.Add(this.nudFirstTicketNumber);
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.dtpStart);
+            this.Controls.Add(this.nudMinutes);
+            this.Controls.Add(this.nudGuestsPerWindow);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtGuests);
-            this.Controls.Add(this.txtStartTime);
-            this.Controls.Add(this.txtEndTime);
-            this.Controls.Add(this.txtFirstTicketNumber);
-            this.Controls.Add(this.txtMinutes);
             this.Controls.Add(this.btnOk);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TicketAppOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
+            this.Load += new System.EventHandler(this.TicketAppOptions_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudGuestsPerWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFirstTicketNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,15 +201,15 @@
         #endregion
 
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.TextBox txtMinutes;
-        private System.Windows.Forms.TextBox txtFirstTicketNumber;
-        private System.Windows.Forms.TextBox txtEndTime;
-        private System.Windows.Forms.TextBox txtStartTime;
-        private System.Windows.Forms.TextBox txtGuests;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nudGuestsPerWindow;
+        private System.Windows.Forms.NumericUpDown nudMinutes;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.NumericUpDown nudFirstTicketNumber;
     }
 }

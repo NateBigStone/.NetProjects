@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ticket.cs" />
     <Compile Include="TicketAppForm.cs">
       <SubType>Form</SubType>
     </Compile>
