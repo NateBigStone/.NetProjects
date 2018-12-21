@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProductMaintenance.Properties {
+namespace ProductMaintenance_18_2_.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,11 @@ namespace ProductMaintenance.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MMABooks.mdf;" +
-            "Integrated Security=True;Connect Timeout=30")]
-        public string MMABooksConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TechSupport_D" +
+            "ata.MDF;Integrated Security=True;Connect Timeout=30")]
+        public string TechSupport_DataConnectionString {
             get {
-                return ((string)(this["MMABooksConnectionString"]));
+                return ((string)(this["TechSupport_DataConnectionString"]));
             }
         }
     }
